@@ -1,3 +1,4 @@
+import { ProxyState } from "../AppState.js"
 
 export default class Pokemon {
     constructor({ name, img, weight, height, types, user, id, order }) {
@@ -26,14 +27,19 @@ export default class Pokemon {
                         <p>User: Ash</p>
                     </div>
                     <div class="text-right text-dark">
-                        Catch Pokemon
+                        ${this.Buttons}
                     </div>
         `
     }
 
     get Buttons() {
+        const exists = ProxyState.myPokemon.find(s => s.name === ProxyState.activePokemon.name)
+        if (this.order) {
+            return `
+          <button type="button" class="btn btn-success" ${exists ? 'disabled' : ''} onclick="app.myPokemonsController.catchPokemon()">Catch Pokemon</button>`
+        }
         return `
-        
+        <button type="button" class="btn btn-danger" onclick="app.myPokemonsController.releasePokemon()">Release pokemon</button>
         `
     }
 }
