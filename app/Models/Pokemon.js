@@ -1,7 +1,7 @@
 import { ProxyState } from "../AppState.js"
 
 export default class Pokemon {
-    constructor({ name, img, weight, height, types, user, id, order }) {
+    constructor({ name, img = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${this.id}.svg", weight, height, types, user, id, order }) {
         this.name = name
         this.img = img
         this.weight = weight
@@ -33,13 +33,12 @@ export default class Pokemon {
     }
 
     get Buttons() {
-        const exists = ProxyState.myPokemon.find(s => s.name === ProxyState.activePokemon.name)
         if (this.order) {
             return `
-          <button type="button" class="btn btn-success" ${exists ? 'disabled' : ''} onclick="app.myPokemonsController.catchPokemon()">Catch Pokemon</button>`
+          <button type="button" class="btn btn-success" onclick="app.myPokemonController.catchPokemon()">Catch Pokemon</button>`
         }
         return `
-        <button type="button" class="btn btn-danger" onclick="app.myPokemonsController.releasePokemon()">Release pokemon</button>
+        <button type="button" class="btn btn-danger" onclick="app.myPokemonController.releasePokemon()">Release pokemon</button>
         `
     }
 }
