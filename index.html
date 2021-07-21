@@ -26,7 +26,10 @@
             <div class="col-md-9">
                 <div class="row d-flex flex-column">
                     <div class="col-md-9">
-                        <div class="bg-light m-3 p-3 shadow"></div>
+                        <div class="bg-light m-3 p-3 shadow text-dark side-bar-scroll">
+                            <h3>Wild Pokemon</h3>
+                            <ol id="api-pokemon"></ol>
+                        </div>
                     </div>
                     <div class="col-md-9">
                         <div class="bg-light m-3 p-3 shadow"></div>
@@ -34,21 +37,7 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="bg-light m-3 p-3 shadow">
-                    <div class="text-dark">
-                        <div class="d-flex justify-content-center">
-                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
-                                alt="Pokemon Name">
-                        </div>
-                        <h4 class='uppercase'>BulbBoy</h4>
-                        <p>Weight: 5</p>
-                        <p>Height: 2</p>
-                        <p>Types: Grass</p>
-                        <p>User: You</p>
-                    </div>
-                    <div class="text-right text-dark">
-                        Catch Pokemon
-                    </div>
+                <div class="bg-light m-3 p-3 shadow" id="displayPokemon">
                 </div>
             </div>
         </div>
