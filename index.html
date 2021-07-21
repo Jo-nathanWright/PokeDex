@@ -12,21 +12,63 @@
     <title>PokeDex</title>
 </head>
 
-<body>
+<body class="debug">
+    <style>
+        body.debug .container,
+        body.debug .container-fluid {
+            outline: 2px double blue;
+            outline-offset: -2px;
+        }
+
+        body.debug .row {
+            outline: 2px dashed red;
+            outline-offset: -2px;
+        }
+
+        body.debug [class*="col-"] {
+            outline: 2px dotted forestgreen;
+            outline-offset: -3px;
+        }
+    </style>
     <header>
         <nav class="navbar navbar-dark navbar-expand bg-dark text-light">
             <a class="navbar-brand" href="#">
-                <img src="assets/img/logo.png" width="45" height="45" alt="" loading="lazy">
-                <span class="ml-2">PokeDex</span>
+                <img src="assets/img/CircleBlue.png" width="45" height="45" alt="" loading="lazy">
+                <span class="ml-2">🔴🟡🟢 PokeDex</span>
             </a>
         </nav>
     </header>
-    <main class="container">
-        <div id="app"></div>
+    <main class="container-fluid bg-red">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="row flex-column">
+                    <div class="col-md-6"></div>
+                    <div class="col-md-6">
+                        <div class="bg-light m-3 p-3 shadow"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="bg-light m-3 p-3 shadow">
+                    <div class="text-dark">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
+                            alt="Pokemon Name">
+                        <h4 class='uppercase'>Pokemon Name</h4>
+                        <p>Weight: 5</p>
+                        <p>Height: 2</p>
+                        <p>Types: []</p>
+                        <p>User: Ash</p>
+                    </div>
+                    <div class="text-right text-dark">
+                        Catch Pokemon
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <footer class="bg-dark text-light">
         <div class="text-center">
-            <p><small>Made with love by Codeworks</small></p>
+            <p><small>Made with love by Ash Ketchum</small></p>
         </div>
     </footer>
 
